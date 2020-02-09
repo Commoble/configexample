@@ -15,9 +15,9 @@ public class ConfigExampleMod
 	
 	public ConfigExampleMod()
 	{
-		config = ConfigHelper.register(ModConfig.Type.SERVER, ConfigImplementation::new);
+		config = ConfigHelper.register(ModConfig.Type.SERVER, ConfigImplementation::new); // instantiate and subscribe our config instance
 		
-		MinecraftForge.EVENT_BUS.addListener(this::testConfig);
+		MinecraftForge.EVENT_BUS.addListener(this::testConfig); // add a test event to make sure our config works
 		
 	}
 	
