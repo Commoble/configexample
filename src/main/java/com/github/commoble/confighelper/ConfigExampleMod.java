@@ -17,7 +17,7 @@ public class ConfigExampleMod
 	{
 		config = ConfigHelper.register(ModConfig.Type.SERVER, ConfigImplementation::new); // instantiate and subscribe our config instance
 		
-		MinecraftForge.EVENT_BUS.addListener(this::testConfig); // add a test event to make sure our config works
+		MinecraftForge.EVENT_BUS.addListener(this::onBlockBroken); // add a test event to make sure our config works
 		
 	}
 	
@@ -42,7 +42,7 @@ public class ConfigExampleMod
 	}
 	
 	// print config values when player breaks a block
-	public void testConfig(BreakEvent event)
+	public void onBlockBroken(BreakEvent event)
 	{
 		System.out.println(config.bones.get());
 		System.out.println(config.bananas.get());
